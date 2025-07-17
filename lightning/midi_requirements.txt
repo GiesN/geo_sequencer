@@ -1,0 +1,4 @@
+# Geo MIDI Sequencer dependencies
+mido>=1.3.0
+python-rtmidi>=1.5.0
+websockets>=12.0

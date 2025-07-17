@@ -1,0 +1,16 @@
+2025-07-17 21:17:31,377 - __main__ - INFO - Starting Geo Sequencer WebSocket client...
+2025-07-17 21:17:31,377 - __main__ - INFO - Connecting to ws://localhost:8000/ws...
+2025-07-17 21:17:31,391 - __main__ - INFO - Successfully connected to WebSocket server
+2025-07-17 21:17:31,391 - __main__ - INFO - [0001] Coordinates: -13.442246, -157.119409 | Timestamp: 44970.698 | Elapsed: 0.0s
+2025-07-17 21:17:36,392 - __main__ - INFO - [0002] Coordinates: 46.933553, -176.393630 | Timestamp: 44975.699 | Elapsed: 5.0s
+2025-07-17 21:17:41,393 - __main__ - INFO - [0003] Coordinates: -21.672283, -127.931983 | Timestamp: 44980.7 | Elapsed: 10.0s
+2025-07-17 21:17:46,394 - __main__ - INFO - [0004] Coordinates: -52.482593, 6.430190 | Timestamp: 44985.702 | Elapsed: 15.0s
+2025-07-17 21:17:51,395 - __main__ - INFO - [0005] Coordinates: -8.495527, 79.032491 | Timestamp: 44990.702 | Elapsed: 20.0s
+2025-07-17 21:17:56,396 - __main__ - INFO - [0006] Coordinates: -18.322539, -24.466063 | Timestamp: 44995.704 | Elapsed: 25.0s
+2025-07-17 21:18:01,401 - __main__ - INFO - Received signal 2, shutting down gracefully...
+2025-07-17 21:18:01,401 - __main__ - INFO - Client stopped. Total messages received: 6
+2025-07-17 21:18:01,402 - __main__ - INFO - [0007] Coordinates: -25.952733, 12.900165 | Timestamp: 45000.705 | Elapsed: 30.0s
+2025-07-17 21:18:05,949 - __main__ - WARNING - WebSocket connection closed: received 1012 (service restart); then sent 1012 (service restart)
+2025-07-17 21:18:05,949 - __main__ - WARNING - Connection lost: received 1012 (service restart); then sent 1012 (service restart)
+2025-07-17 21:18:05,949 - __main__ - INFO - WebSocket connection closed
+2025-07-17 21:18:05,950 - __main__ - INFO - Client stopped. Total messages received: 7
