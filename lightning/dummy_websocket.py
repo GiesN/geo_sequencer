@@ -6,7 +6,7 @@ from fastapi.responses import HTMLResponse
 import uvicorn
 
 app = FastAPI(
-    title="Geo Sequencer",
+    title="Coordinates Dummy WebSocket",
     description="Random Earth coordinates streaming via WebSocket",
 )
 
@@ -47,7 +47,7 @@ async def get_homepage():
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Geo Sequencer - Random Earth Coordinates</title>
+        <title>Coordinates Dummy WebSocket - Random Earth Coordinates</title>
         <style>
             body { font-family: Arial, sans-serif; margin: 40px; }
             #coordinates { background: #f0f0f0; padding: 20px; border-radius: 5px; }

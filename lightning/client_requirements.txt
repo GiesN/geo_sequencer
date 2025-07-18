@@ -1,2 +1,0 @@
-# WebSocket client dependencies
-websockets>=12.0

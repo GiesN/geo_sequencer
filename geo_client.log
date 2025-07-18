@@ -14,3 +14,14 @@
 2025-07-17 21:16:51,169 - __main__ - INFO - Received signal 2, shutting down gracefully...
 2025-07-17 21:16:51,170 - __main__ - INFO - Client stopped. Total messages received: 0
 2025-07-17 21:16:53,113 - __main__ - INFO - Client stopped. Total messages received: 0
+2025-07-18 11:23:41,819 - __main__ - INFO - Starting Geo Sequencer WebSocket client...
+2025-07-18 11:23:41,819 - __main__ - INFO - Connecting to ws://localhost:8000/ws...
+2025-07-18 11:23:41,833 - __main__ - INFO - Successfully connected to WebSocket server
+2025-07-18 11:23:41,833 - __main__ - INFO - [0001] Coordinates: 5.437220, 56.047247 | Timestamp: 95741.35 | Elapsed: 0.0s
+2025-07-18 11:23:46,836 - __main__ - INFO - [0002] Coordinates: -85.302755, 0.707670 | Timestamp: 95746.351 | Elapsed: 5.0s
+2025-07-18 11:23:51,837 - __main__ - INFO - [0003] Coordinates: 83.094087, 142.101132 | Timestamp: 95751.352 | Elapsed: 10.0s
+2025-07-18 11:23:56,838 - __main__ - INFO - [0004] Coordinates: 23.106164, 14.517095 | Timestamp: 95756.354 | Elapsed: 15.0s
+2025-07-18 11:24:00,080 - __main__ - INFO - Received signal 2, shutting down gracefully...
+2025-07-18 11:24:00,080 - __main__ - INFO - Client stopped. Total messages received: 4
+2025-07-18 11:24:01,839 - __main__ - INFO - [0005] Coordinates: 60.293147, 172.525408 | Timestamp: 95761.356 | Elapsed: 20.0s
+2025-07-18 11:24:06,841 - __main__ - INFO - [0006] Coordinates: 23.660058, 157.369014 | Timestamp: 95766.357 | Elapsed: 25.0s

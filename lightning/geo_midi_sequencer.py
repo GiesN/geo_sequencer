@@ -1,20 +1,18 @@
 #!/usr/bin/env python3
 """
 Geo MIDI Sequencer
-A MIDI sequencer that converts streaming Earth coordinates from the WebSocket client
+A MIDI sequencer that converts streaming Earth coordinates from coordinate clients
 into MIDI notes for synthesizer control. Coordinates are mapped to musical scales
 and sent as MIDI note on/off messages.
 """
 
 import asyncio
-import json
 import logging
 import sys
 from typing import Dict, Any, Optional
 import mido
 from mido import Message
-import websockets
-from websockets.exceptions import ConnectionClosed
+from coordinate_client import CoordinateClient, DummyWebSocketClient
 
 
 class GeoMidiSequencer:
@@ -25,7 +23,7 @@ class GeoMidiSequencer:
 
     def __init__(
         self,
-        server_url: str = "ws://localhost:8000/ws",
+        coordinate_client: CoordinateClient,
         midi_port_name: Optional[str] = None,
         scale_type: str = "pentatonic",
         base_note: int = 60,  # Middle C
@@ -39,7 +37,7 @@ class GeoMidiSequencer:
         Initialize the Geo MIDI Sequencer.
 
         Args:
-            server_url: WebSocket server URL for coordinate stream
+            coordinate_client: CoordinateClient instance for streaming coordinates
             midi_port_name: Name of MIDI output port (None for auto-detect)
             scale_type: Musical scale ('pentatonic', 'major', 'minor', 'chromatic')
             base_note: Base MIDI note number (60 = Middle C)
@@ -49,7 +47,7 @@ class GeoMidiSequencer:
             note_duration: Duration of each note in seconds
             auto_create_port: Create virtual MIDI port if none found
         """
-        self.server_url = server_url
+        self.coordinate_client = coordinate_client
         self.midi_port_name = midi_port_name
         self.scale_type = scale_type
         self.base_note = base_note
@@ -59,9 +57,8 @@ class GeoMidiSequencer:
         self.note_duration = note_duration
         self.auto_create_port = auto_create_port
 
-        # MIDI and WebSocket connections
+        # MIDI connection
         self.midi_port: Optional[mido.ports.BaseOutput] = None
-        self.websocket: Optional[websockets.WebSocketServerProtocol] = None
 
         # State tracking
         self.is_running = False
@@ -188,7 +185,7 @@ class GeoMidiSequencer:
             self.midi_port.send(msg)
             self.logger.debug(f"MIDI Note ON: {note}, Velocity: {velocity}")
 
-    def process_coordinate_data(self, data: Dict[str, Any]):
+    async def process_coordinate_data(self, data: Dict[str, Any]):
         """
         Process incoming coordinate data and generate MIDI.
 
@@ -269,46 +266,6 @@ class GeoMidiSequencer:
             self.send_note_off(note)
             self.current_note = None
 
-    async def connect_websocket(self) -> bool:
-        """
-        Connect to the WebSocket server.
-
-        Returns:
-            bool: True if connection successful, False otherwise
-        """
-        try:
-            self.logger.info(f"Connecting to WebSocket: {self.server_url}")
-
-            self.websocket = await websockets.connect(
-                self.server_url, ping_interval=20.0, ping_timeout=10.0
-            )
-
-            self.logger.info("Successfully connected to coordinate stream")
-            return True
-
-        except Exception as e:
-            self.logger.error(f"WebSocket connection failed: {e}")
-            return False
-
-    async def listen_for_coordinates(self):
-        """Listen for coordinate data from WebSocket."""
-        try:
-            async for message in self.websocket:
-                try:
-                    data = json.loads(message)
-                    self.process_coordinate_data(data)
-                except json.JSONDecodeError as e:
-                    self.logger.error(f"Failed to parse coordinate data: {e}")
-                except Exception as e:
-                    self.logger.error(f"Error processing coordinate message: {e}")
-
-        except ConnectionClosed as e:
-            self.logger.warning(f"WebSocket connection closed: {e}")
-            raise
-        except Exception as e:
-            self.logger.error(f"Error in coordinate listener: {e}")
-            raise
-
     async def run(self):
         """Main run loop for the sequencer."""
         self.logger.info("Starting Geo MIDI Sequencer...")
@@ -318,16 +275,14 @@ class GeoMidiSequencer:
             self.logger.error("Failed to setup MIDI, exiting")
             return
 
-        # Connect to WebSocket
-        if not await self.connect_websocket():
-            self.logger.error("Failed to connect to WebSocket, exiting")
-            return
+        # Set this sequencer as the callback for coordinate data
+        self.coordinate_client.callback = self.process_coordinate_data
 
         self.is_running = True
 
         try:
-            # Start listening for coordinates
-            await self.listen_for_coordinates()
+            # Start the coordinate client
+            await self.coordinate_client.run()
         except KeyboardInterrupt:
             self.logger.info("Sequencer interrupted by user")
         except Exception as e:
@@ -347,11 +302,6 @@ class GeoMidiSequencer:
         if self.midi_port:
             self.midi_port.close()
             self.logger.info("MIDI port closed")
-
-        # Close WebSocket
-        if self.websocket:
-            await self.websocket.close()
-            self.logger.info("WebSocket connection closed")
 
         self.logger.info(
             f"Sequencer stopped. Total sequences played: {self.sequence_count}"
@@ -430,9 +380,12 @@ def main():
     if args.verbose:
         logging.getLogger().setLevel(logging.DEBUG)
 
-    # Create sequencer
+    # Create coordinate client (DummyWebSocketClient for the dummy websocket)
+    coordinate_client = DummyWebSocketClient(server_url=args.url)
+
+    # Create sequencer with the client
     sequencer = GeoMidiSequencer(
-        server_url=args.url,
+        coordinate_client=coordinate_client,
         midi_port_name=args.midi_port,
         scale_type=args.scale,
         base_note=args.base_note,
