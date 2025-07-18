@@ -12,7 +12,7 @@ import sys
 from typing import Dict, Any, Optional
 import mido
 from mido import Message
-from coordinate_client import CoordinateClient, DummyWebSocketClient
+from geo_sequencer.coordinate_client import CoordinateClient
 
 
 class GeoMidiSequencer:
@@ -317,90 +317,3 @@ class GeoMidiSequencer:
             "base_note": self.base_note,
             "is_running": self.is_running,
         }
-
-
-def main():
-    """Main function to run the Geo MIDI Sequencer."""
-    import argparse
-
-    parser = argparse.ArgumentParser(
-        description="Geo MIDI Sequencer - Convert coordinates to music"
-    )
-    parser.add_argument(
-        "--url",
-        default="ws://localhost:8000/ws",
-        help="WebSocket server URL (default: ws://localhost:8000/ws)",
-    )
-    parser.add_argument(
-        "--midi-port", help="MIDI output port name (auto-detect if not specified)"
-    )
-    parser.add_argument(
-        "--scale",
-        default="pentatonic",
-        choices=["pentatonic", "major", "minor", "chromatic", "blues", "dorian"],
-        help="Musical scale to use (default: pentatonic)",
-    )
-    parser.add_argument(
-        "--base-note",
-        type=int,
-        default=60,
-        help="Base MIDI note number (default: 60 = Middle C)",
-    )
-    parser.add_argument(
-        "--octave-range",
-        type=int,
-        default=4,
-        help="Number of octaves to span (default: 4)",
-    )
-    parser.add_argument(
-        "--note-duration",
-        type=float,
-        default=1.0,
-        help="Duration of each note in seconds (default: 1.0)",
-    )
-    parser.add_argument(
-        "--velocity-min",
-        type=int,
-        default=64,
-        help="Minimum MIDI velocity (default: 64)",
-    )
-    parser.add_argument(
-        "--velocity-max",
-        type=int,
-        default=127,
-        help="Maximum MIDI velocity (default: 127)",
-    )
-    parser.add_argument(
-        "--verbose", "-v", action="store_true", help="Enable verbose logging"
-    )
-
-    args = parser.parse_args()
-
-    # Set logging level
-    if args.verbose:
-        logging.getLogger().setLevel(logging.DEBUG)
-
-    # Create coordinate client (DummyWebSocketClient for the dummy websocket)
-    coordinate_client = DummyWebSocketClient(server_url=args.url)
-
-    # Create sequencer with the client
-    sequencer = GeoMidiSequencer(
-        coordinate_client=coordinate_client,
-        midi_port_name=args.midi_port,
-        scale_type=args.scale,
-        base_note=args.base_note,
-        octave_range=args.octave_range,
-        velocity_min=args.velocity_min,
-        velocity_max=args.velocity_max,
-        note_duration=args.note_duration,
-    )
-
-    try:
-        asyncio.run(sequencer.run())
-    except Exception as e:
-        print(f"Error running sequencer: {e}")
-        sys.exit(1)
-
-
-if __name__ == "__main__":
-    main()
