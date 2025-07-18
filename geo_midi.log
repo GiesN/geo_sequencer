@@ -7,3 +7,61 @@
 2025-07-18 11:21:53,696 - DummyWebSocketClient - ERROR - Failed to connect, exiting
 2025-07-18 11:21:53,697 - __main__ - INFO - MIDI port closed
 2025-07-18 11:21:53,697 - __main__ - INFO - Sequencer stopped. Total sequences played: 0
+2025-07-18 19:26:02,963 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Quantization: 160 BPM, 16th notes, interval: 0.094s
+2025-07-18 19:26:02,964 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Starting Quantized Geo MIDI Sequencer...
+2025-07-18 19:26:02,964 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Quantization enabled: 160 BPM, 16th notes
+2025-07-18 19:26:02,964 - geo_sequencer.quantized_geo_midi_sequencer - ERROR - Error processing coordinate data: local variable 'note_names' referenced before assignment
+2025-07-18 19:26:03,063 - geo_sequencer.quantized_geo_midi_sequencer - INFO - 🎵 [0001] Quantized: Lat:  52.500 → E5 (76) | Lon:   13.400 → Vel:  83 | Delay: 0.099s
+2025-07-18 19:26:03,465 - geo_sequencer.quantized_geo_midi_sequencer - ERROR - Error processing coordinate data: local variable 'note_names' referenced before assignment
+2025-07-18 19:26:03,538 - geo_sequencer.quantized_geo_midi_sequencer - INFO - 🎵 [0002] Quantized: Lat:  40.700 → E5 (76) | Lon:  -74.000 → Vel:  74 | Delay: 0.072s
+2025-07-18 19:26:03,967 - geo_sequencer.quantized_geo_midi_sequencer - ERROR - Error processing coordinate data: local variable 'note_names' referenced before assignment
+2025-07-18 19:26:04,003 - geo_sequencer.quantized_geo_midi_sequencer - INFO - 🎵 [0003] Quantized: Lat: -33.900 → G4 (67) | Lon:  151.200 → Vel:  97 | Delay: 0.036s
+2025-07-18 19:26:04,467 - geo_sequencer.quantized_geo_midi_sequencer - ERROR - Error processing coordinate data: local variable 'note_names' referenced before assignment
+2025-07-18 19:26:04,566 - geo_sequencer.quantized_geo_midi_sequencer - INFO - 🎵 [0004] Quantized: Lat:  35.700 → D5 (74) | Lon:  139.700 → Vel:  95 | Delay: 0.099s
+2025-07-18 19:26:07,965 - geo_sequencer.quantized_geo_midi_sequencer - INFO - MIDI port closed
+2025-07-18 19:26:07,966 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Sequencer stopped. Sequences: 4, Queued notes: 0
+2025-07-18 19:26:07,967 - geo_sequencer.quantized_geo_midi_sequencer - INFO - MIDI port closed
+2025-07-18 19:26:07,968 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Sequencer stopped. Sequences: 4, Queued notes: 0
+2025-07-18 19:26:51,481 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Quantization: 160 BPM, 16th notes, interval: 0.094s
+2025-07-18 19:26:51,481 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Starting Quantized Geo MIDI Sequencer...
+2025-07-18 19:26:51,481 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Quantization enabled: 160 BPM, 16th notes
+2025-07-18 19:26:51,580 - geo_sequencer.quantized_geo_midi_sequencer - INFO - 🎵 [0001] Quantized: Lat:  52.500 → E5 (76) | Lon:   13.400 → Vel:  83 | Delay: 0.099s
+2025-07-18 19:26:52,054 - geo_sequencer.quantized_geo_midi_sequencer - INFO - 🎵 [0002] Quantized: Lat:  40.700 → E5 (76) | Lon:  -74.000 → Vel:  74 | Delay: 0.071s
+2025-07-18 19:26:52,519 - geo_sequencer.quantized_geo_midi_sequencer - INFO - 🎵 [0003] Quantized: Lat: -33.900 → G4 (67) | Lon:  151.200 → Vel:  97 | Delay: 0.036s
+2025-07-18 19:26:53,080 - geo_sequencer.quantized_geo_midi_sequencer - INFO - 🎵 [0004] Quantized: Lat:  35.700 → D5 (74) | Lon:  139.700 → Vel:  95 | Delay: 0.096s
+2025-07-18 19:26:56,482 - geo_sequencer.quantized_geo_midi_sequencer - INFO - MIDI port closed
+2025-07-18 19:26:56,483 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Sequencer stopped. Sequences: 4, Queued notes: 0
+2025-07-18 19:26:56,483 - geo_sequencer.quantized_geo_midi_sequencer - INFO - MIDI port closed
+2025-07-18 19:26:56,483 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Sequencer stopped. Sequences: 4, Queued notes: 0
+2025-07-18 19:27:36,761 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Quantization: 120 BPM, 4th notes, interval: 0.500s
+2025-07-18 19:27:36,761 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Starting Quantized Geo MIDI Sequencer...
+2025-07-18 19:27:36,761 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Quantization enabled: 120 BPM, 4th notes
+2025-07-18 19:27:37,269 - geo_sequencer.quantized_geo_midi_sequencer - INFO - 🎵 [0001] Quantized: Lat:  52.500 → C7 (96) | Lon:   13.400 → Vel:  97 | Delay: 0.508s
+2025-07-18 19:27:38,762 - geo_sequencer.quantized_geo_midi_sequencer - INFO - MIDI port closed
+2025-07-18 19:27:38,762 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Sequencer stopped. Sequences: 1, Queued notes: 0
+2025-07-18 19:27:38,763 - geo_sequencer.quantized_geo_midi_sequencer - INFO - MIDI port closed
+2025-07-18 19:27:38,764 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Sequencer stopped. Sequences: 1, Queued notes: 0
+2025-07-18 19:27:38,776 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Quantization: 120 BPM, 8th notes, interval: 0.250s
+2025-07-18 19:27:38,777 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Starting Quantized Geo MIDI Sequencer...
+2025-07-18 19:27:38,777 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Quantization enabled: 120 BPM, 8th notes
+2025-07-18 19:27:39,034 - geo_sequencer.quantized_geo_midi_sequencer - INFO - 🎵 [0001] Quantized: Lat:  52.500 → C7 (96) | Lon:   13.400 → Vel:  97 | Delay: 0.256s
+2025-07-18 19:27:40,778 - geo_sequencer.quantized_geo_midi_sequencer - INFO - MIDI port closed
+2025-07-18 19:27:40,779 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Sequencer stopped. Sequences: 1, Queued notes: 0
+2025-07-18 19:27:40,779 - geo_sequencer.quantized_geo_midi_sequencer - INFO - MIDI port closed
+2025-07-18 19:27:40,780 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Sequencer stopped. Sequences: 1, Queued notes: 0
+2025-07-18 19:27:40,791 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Quantization: 120 BPM, 16th notes, interval: 0.125s
+2025-07-18 19:27:40,791 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Starting Quantized Geo MIDI Sequencer...
+2025-07-18 19:27:40,791 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Quantization enabled: 120 BPM, 16th notes
+2025-07-18 19:27:40,925 - geo_sequencer.quantized_geo_midi_sequencer - INFO - 🎵 [0001] Quantized: Lat:  52.500 → C7 (96) | Lon:   13.400 → Vel:  97 | Delay: 0.133s
+2025-07-18 19:27:42,793 - geo_sequencer.quantized_geo_midi_sequencer - INFO - MIDI port closed
+2025-07-18 19:27:42,793 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Sequencer stopped. Sequences: 1, Queued notes: 0
+2025-07-18 19:27:42,793 - geo_sequencer.quantized_geo_midi_sequencer - INFO - MIDI port closed
+2025-07-18 19:27:42,793 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Sequencer stopped. Sequences: 1, Queued notes: 0
+2025-07-18 19:27:42,802 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Quantization: 160 BPM, 16th notes, interval: 0.094s
+2025-07-18 19:27:42,802 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Starting Quantized Geo MIDI Sequencer...
+2025-07-18 19:27:42,802 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Quantization enabled: 160 BPM, 16th notes
+2025-07-18 19:27:42,902 - geo_sequencer.quantized_geo_midi_sequencer - INFO - 🎵 [0001] Quantized: Lat:  52.500 → C7 (96) | Lon:   13.400 → Vel:  97 | Delay: 0.100s
+2025-07-18 19:27:44,802 - geo_sequencer.quantized_geo_midi_sequencer - INFO - MIDI port closed
+2025-07-18 19:27:44,803 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Sequencer stopped. Sequences: 1, Queued notes: 0
+2025-07-18 19:27:44,804 - geo_sequencer.quantized_geo_midi_sequencer - INFO - MIDI port closed
+2025-07-18 19:27:44,804 - geo_sequencer.quantized_geo_midi_sequencer - INFO - Sequencer stopped. Sequences: 1, Queued notes: 0

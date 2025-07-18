@@ -1,0 +1,40 @@
+# Lightning MIDI Sequencer Configuration
+# Configuration file for the Blitzortung Lightning MIDI Sequencer
+
+[sequencer]
+# Musical scale settings
+scale_type = "pentatonic"  # Options: "pentatonic", "major", "minor", "chromatic", "blues", "dorian"
+base_note = 48            # Base MIDI note number (48 = C3, 60 = Middle C)
+octave_range = 5          # Number of octaves to span
+
+# MIDI velocity settings
+velocity_min = 80         # Minimum MIDI velocity (1-127)
+velocity_max = 127        # Maximum MIDI velocity (1-127)
+
+# Note timing settings
+note_duration = 2.0       # Duration of each note in seconds
+auto_create_port = true   # Create virtual MIDI port if none found
+
+[quantization]
+# Rhythmic quantization settings
+enabled = true            # Enable quantization to musical timing
+tempo_bpm = 120          # Tempo in beats per minute
+subdivision = "16th"     # Note subdivision: "4th", "8th", "16th", "32nd", "64th"
+swing = 0.0              # Swing timing (0.0 = straight, 0.5 = maximum swing)
+max_queue_size = 100     # Maximum number of notes to queue for quantization
+
+[midi]
+# MIDI output settings
+port_name = ""           # Specific MIDI port name (empty = auto-detect)
+channel = 0              # MIDI channel (0-15)
+
+[blitzortung]
+# Blitzortung client settings
+reconnect_delay = 5.0         # Delay between reconnection attempts in seconds
+max_reconnect_attempts = 10   # Maximum number of reconnection attempts
+
+[logging]
+# Logging configuration
+level = "INFO"               # Log level: "DEBUG", "INFO", "WARNING", "ERROR"
+log_file = "lightning_music.log"  # Log file name
+console_output = true        # Enable console output
